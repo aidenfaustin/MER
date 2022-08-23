@@ -20,43 +20,6 @@ from torch.utils.data import  Dataset, DataLoader
 from collections import defaultdict
 from torch.utils.data import  Dataset, DataLoader
 
-#csv files
-# def audio(csv_path_train):
-#     #csv_path_train = './6552/train'
-#     #audio_feature = defaultdict(list)
-#     csv_files_train = os.listdir(csv_path_train)
-#     print('train',len(csv_files_train))
-#     csv_files_train.sort(key=lambda x: (int(x.split('_')[0][3:]), int(x.split('_')[1][3:-4])))
-#     #print('csv_files_train', csv_files_train)
-#     audio_feature = [] 
-#     for csv_file in csv_files_train:
-#         input_path = csv_path_train + '/' + csv_file
-#         #print('input_path',input_path)
-#         with open(input_path) as f:
-#             last_line = f.readlines()[-1] 
-#         feature = last_line.split(",")
-#         feature = np.array(feature[1:-1],
-#                             dtype="float64").tolist()  #
-#         k, nums = re.findall(r"\d+\d*", csv_file)
-#         #第2到倒数第二个为特征数据，共6552维特征
-#         audio_feature.append(feature)
-#     return audio_feature
-        
-
-# csv_path_train = '../../../Data/Meld/meld_opensmile/6552/train'
-# train_audio = audio(csv_path_train)
-# #print(type(audio_feature))
-# train_audio = np.array(train_audio)
-# print('train_audio', train_audio.shape)
-
-# #avg std 
-# mean = np.mean(train_audio, axis=0)
-# print('mean',mean.shape)
-# std = np.std(train_audio, axis=0)
-# print('std',std.shape)
-# train_audio = (train_audio - mean)/(std+1e-5)
-
-
 #dataset
 class MELDRobertaCometDataset(Dataset):
 
